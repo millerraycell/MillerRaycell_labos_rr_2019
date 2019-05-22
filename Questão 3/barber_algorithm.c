@@ -11,6 +11,26 @@ sem_t barber;
 sem_t customer;
 sem_t mutex;
 
+void cut_hair()
+{
+    printf("Barbeiro esta cortando o cabelo\n");
+    for(int i=0; i< 0xFFFFFFFF; i++);;
+}
+
+void customer_arrived()
+{
+    printf("Cliente chegou para cortar cabelo\n");
+}
+void get_haircut()
+{
+    printf("Cliente esta tendo o cabelo cortado\n");
+}
+
+void giveup_haircut()
+{
+    printf("Cliente desistiu, salao cheio\n");
+}
+
 void *cliente()
 {
     sem_wait(&mutex);
@@ -44,26 +64,6 @@ void *barbeiro()
         cut_hair();
     }
     pthread_exit(NULL);
-}
-
-void cut_hair()
-{
-    printf("Barbeiro esta cortando o cabelo\n");
-    for(int i=0; i< 0xFFFFFFFF; i++);;
-}
-
-void customer_arrived()
-{
-    printf("Cliente chegou para cortar cabelo\n");
-}
-void get_haircut()
-{
-    printf("Cliente esta tendo o cabelo cortado\n");
-}
-
-void giveup_haircut()
-{
-    printf("Cliente desistiu, salao cheio\n");
 }
 
 int main()
