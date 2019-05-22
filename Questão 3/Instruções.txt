@@ -1,0 +1,10 @@
+Para compilar o código basta copiar e colar no terminal
+
+gcc barber_algorithm.c -o barber -pthread
+
+Para executar copie e cole no terminal
+
+./barber
+
+Código inspirado no código encontrado em:
+http://ces33.blogspot.com/2009/05/o-problema-do-barbeiro-dorminhoco-com_07.html
